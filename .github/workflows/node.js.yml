@@ -28,7 +28,7 @@ jobs:
         # cache: 'npm'
         cache: 'yarn'
     # - run: npm ci
-    - run: yarn run ci
+    # - run: yarn run ci
     # - run: npm run build --if-present
     - run: yarn run build
     # - run: npm test
