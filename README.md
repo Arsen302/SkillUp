@@ -1,73 +1,87 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# SkillUp — API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Prerequisites
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Node >=16, npm >=8, Docker, Docker-Compose should be installed in the system.
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+### Install npm dependencies
 
 ```bash
-$ npm install
+yarn install
 ```
 
-## Running the app
+### Environment variables
+
+Fill in `.env` file using `.env.example` as an example.
+
+### If you want to use apollo studio for testing API you can signup and create new graph, and then you can get creds and adding their to .env file to work with apollo studio
+
+`APOLLO_KEY=...`
+`APOLLO_GRAPH_ID=...`
+`APOLLO_GRAPH_VARIANT=...`
+`APOLLO_SCHEMA_REPORTING=...`
+
+## Database instructions
+
+### Run database via Docker-Compose
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+docker-compose up -d
 ```
 
-## Test
+### Check this URL in your .env.example it's needed correct for connecting migrations library to database
+
+`DATABASE_URL=postgres://test:test@localhost:5432/test`
+
+### Run migrations
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+yarn run migrations:up
 ```
 
-## Support
+### Fill database with seeds
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+yarn run seeds:up
+```
 
-## Stay in touch
+## Running server Locally
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Build and Production mode
+
+```bash
+yarn run start:prod
+```
+
+### Development mode
+
+```bash
+yarn run start:dev
+```
+
+### We have 3 roles and 3 default users with their creds:
+
+1. ADMIN:
+
+   - First name: `Kyle`
+   - Last name: `Simpson`
+   - Email: `k.simpson@mail.com`
+   - Non Hashed Password: `sdpo!~[dvjfo32epfoj23`
+
+2. TEACHER:
+
+   - First name: `Donald`
+   - Last name: `Knuth`
+   - Email: `d.knuth@mail.com`
+   - Non Hashed Password: `knuth302don`
+
+3. STUDENT:
+
+   - First name: `John`
+   - Last name: `Doe`
+   - Email: `j.doe@mail.com`
+   - Non Hashed Password: `johndoe123`
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+[MIT licensed](LICENSE).
