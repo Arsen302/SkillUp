@@ -12,7 +12,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "ci": "shell: /usr/bin/bash -e {0}",
+    "ci": "",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -28,6 +28,7 @@
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^8.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
