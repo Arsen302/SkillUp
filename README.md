@@ -63,15 +63,15 @@ yarn run start:dev
 
 1. ADMIN:
 
-   - First name: `Kyle`
-   - Last name: `Simpson`
+   - First name: `Donald`
+   - Last name: `Knuth`
    - Email: `k.simpson@mail.com`
    - Non Hashed Password: `sdpo!~[dvjfo32epfoj23`
 
 2. TEACHER:
 
-   - First name: `Donald`
-   - Last name: `Knuth`
+   - First name: `Kyle`
+   - Last name: `Simpson`
    - Email: `d.knuth@mail.com`
    - Non Hashed Password: `knuth302don`
 

@@ -1,0 +1,7 @@
+{
+  "*.{js, ts}": [
+    "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "editorconfig-checker"
+  ]
+}
